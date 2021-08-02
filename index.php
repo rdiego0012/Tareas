@@ -1,9 +1,7 @@
 <?php
  include ("conexion.php");
  $con= conectar();
-
  $sql = "SELECT * FROM paciente";
-
  $query = mysqli_query($con,$sql);
  ?>
 
