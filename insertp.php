@@ -12,7 +12,7 @@
     $query = mysqli_query($con,$sql);
     if($query){
         echo "<script> alert('Dato ingresado con exito');
-        location.href='../index.php';
+        location.href='..github/tareas/index.php';
          </script>";   
     }    
 ?>
