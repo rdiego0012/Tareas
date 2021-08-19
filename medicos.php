@@ -1,7 +1,7 @@
 <?php
   include ("conexion.php");
   $con= conectar();
-  $sql = "SELECT * FROM paciente";
+  $sql = "SELECT * FROM doctor  WHERE estado_doctor = 1 ";
   $query = mysqli_query($con,$sql);
 ?>
 
@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Medicos </title>
+    <title> medicos </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
@@ -21,7 +21,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Ingreso de Pacientes</h5>
+        <h5 class="modal-title">Ingreso de Doctores</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -62,35 +62,39 @@
 
                 <div class="form-group">
                   <label for="recipient-name" class="col-form-label">Nombres:</label>
-                  <input type="text" name="nombre" class="form-control" value="<?php echo $dataCliente['nombres_paciente']; ?>" required="true">
+                  <input type="text" name="nombre" class="form-control" value="<?php echo $dataCliente['nombres_doctor']; ?>" required="true">
                 </div>
                 <div class="form-group">
                   <label for="recipient-name" class="col-form-label">Apellidos:</label>
-                  <input type="email" name="correo" class="form-control" value="<?php echo $dataCliente['apellidos_paciente']; ?>" required="true">
-                </div>
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Edad:</label>
-                  <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['edad_paciente']; ?>" required="true">
+                  <input type="email" name="correo" class="form-control" value="<?php echo $dataCliente['apellidos_doctor']; ?>" required="true">
                 </div>
                 <div class="form-group">
                   <label for="recipient-name" class="col-form-label">Direccion:</label>
-                  <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['direccion_paciente']; ?>" required="true">
+                  <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['direccion_doctor']; ?>" required="true">
                 </div>
                 <div class="form-group">
                   <label for="recipient-name" class="col-form-label">Telefono:</label>
-                  <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['telefono_paciente']; ?>" required="true">
-                </div>         
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Ocupacion:</label>
-                  <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['ocupacion_paciente']; ?>" required="true">
-                </div> 
+                  <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['telefono_doctor']; ?>" required="true">
+                </div>
                 <div class="form-group">
                   <label for="recipient-name" class="col-form-label">Genero:</label>
-                  <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['genero_paciente']; ?>" required="true">
+                  <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['genero_estado']; ?>" required="true">
+                </div>         
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Edad:</label>
+                  <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['edad_doctor']; ?>" required="true">
                 </div> 
                 <div class="form-group">
                   <label for="recipient-name" class="col-form-label">Estado:</label>
-                  <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['estado_paciente']; ?>" required="true">
+                  <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['estado_doctor']; ?>" required="true">
+                </div> 
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Municipio:</label>
+                  <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['id_municipio']; ?>" required="true">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Estado Civil:</label>
+                  <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['id_estadocivil']; ?>" required="true">
                 </div>        
             </div>
             <div class="modal-footer">
@@ -114,7 +118,7 @@
       <a class="navbar-brand" href="index.php">Inicio</a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link "  href="index.php">Pacientes</a>
+          <a class="nav-link "  href="pacientes.php">Pacientes</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="medicos.php">Médicos</a>
@@ -125,7 +129,7 @@
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
       </form>
     </div>
   </div>
@@ -156,12 +160,13 @@
                  <th scope="col">Id</th>
                 <th scope="col">Nombres</th>
                 <th scope="col">Apellidos</th>
-                <th scope="col">Edad</th>
                 <th scope="col">Direccion</th>
                 <th scope="col">Telefono</th>
-                <th scope="col">Ocupacion</th>
                 <th scope="col">Genero</th>
+                <th scope="col">Edad</th>
                 <th scope="col">Estado</th>
+                <th scope="col">Municipio</th>
+                <th scope="col">Estado Civil</th>                              
                 <th> </th>
                 <th></th>
                 </tr>
@@ -171,15 +176,16 @@
                 while ($row = mysqli_fetch_array($query)){
                 ?>
                 <tr>
-                    <td> <?php echo $row['id_paciente'] ?> </td>
-                    <td> <?php echo $row['nombres_paciente'] ?> </td>
-                    <td> <?php echo $row['apellidos_paciente'] ?> </td>
-                    <td> <?php echo $row['edad_paciente'] ?> </td>
-                    <td> <?php echo $row['direccion_paciente'] ?> </td>
-                    <td> <?php echo $row['telefono_paciente'] ?> </td>
-                    <td> <?php echo $row['ocupacion_paciente'] ?> </td>
-                    <td> <?php echo $row['genero_paciente'] ?> </td>
-                    <td> <?php echo $row['estado_paciente'] ?> </td>
+                    <td> <?php echo $row['id_doctor'] ?> </td>
+                    <td> <?php echo $row['nombres_doctor'] ?> </td>
+                    <td> <?php echo $row['apellidos_doctor'] ?> </td>                    
+                    <td> <?php echo $row['direccion_doctor'] ?> </td>
+                    <td> <?php echo $row['telefono_doctor'] ?> </td>                    
+                    <td> <?php echo $row['genero_doctor'] ?> </td>
+                    <td> <?php echo $row['edad_doctor'] ?> </td>                    
+                    <td> <?php echo $row['estado_doctor'] ?> </td>
+                    <td> <?php echo $row['id_municipio'] ?> </td>
+                    <td> <?php echo $row['id_estadocivil'] ?> </td>
                     <td> <a href="actualizarp.php?id_paciente=<?php echo $row['id_paciente'] ?>" class="btn btn-danger">Editar</a></td>                                     
                 </tr>                             
                 <?php

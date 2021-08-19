@@ -31,9 +31,7 @@
                 <input type="text" class="form-control mb-3" name="apellidos_paciente" placeholder="Apellidos">
                 <input type="text" class="form-control mb-3" name="edad_paciente" placeholder="Edad">
                 <input type="text" class="form-control mb-3" name="direccion_paciente" placeholder="Dirección">
-                <input type="text" class="form-control mb-3" name="telefono_paciente" placeholder="Teléfono"> 
-                <input type="text" class="form-control mb-3" name="ocupacion_paciente" placeholder="Ocupacion"> 
-                <input type="text" class="form-control mb-3" name="genero_paciente" placeholder="Genero">   
+                <input type="text" class="form-control mb-3" name="telefono_paciente" placeholder="Teléfono">   
                                         
       </div>
       <div class="modal-footer">
@@ -87,23 +85,24 @@
                   <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['ocupacion_paciente']; ?>" required="true">
                 </div> 
                 <div class="form-group">
-
                   <label for="recipient-name" class="col-form-label">Genero:</label>
                   <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['genero_paciente']; ?>" required="true">
                 </div> 
                 <!--<div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Estado:</label>
+                <label for="recipient-name" class="col-form-label">Estado:</label>
                   <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['estado_paciente']; ?>" required="true">
-                </div> -->        
+                </div>        -->
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
               <button type="submit" class="btn btn-primary">Guardar Cambios</button>
             </div>
+        </form>
 
     </div>
   </div>
 </div>
+
 
 <div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -148,7 +147,7 @@
                 <input type="submit" class="btn btn-primary btn-block" >
             </form>
             </div>--->
-            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#miModal"> Agregar</button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#miModal"> Agregar pacientes</button>
             <div class="row justify-content-md-center"> 
             <div class="col-md-8">
             <table class="table mt-5">
@@ -162,7 +161,7 @@
                 <th scope="col">Telefono</th>
                 <th scope="col">Ocupacion</th>
                 <th scope="col">Genero</th>
-                <!--<th scope="col">Estado</th>-->
+                <th scope="col">Estado</th>
                 <th> </th>
                 <th></th>
                 </tr>
@@ -180,7 +179,7 @@
                     <td> <?php echo $row['telefono_paciente'] ?> </td>
                     <td> <?php echo $row['ocupacion_paciente'] ?> </td>
                     <td> <?php echo $row['genero_paciente'] ?> </td>
-                    <!--<td> <?php echo $row['estado_paciente'] ?> </td>-->
+                    <!--<td> <?php echo $row['estado_paciente'] ?> </td> -->
                     <td> <a href="actualizarp.php?id_paciente=<?php echo $row['id_paciente'] ?>" class="btn btn-danger">Editar</a></td>                                     
                 </tr>                             
                 <?php
