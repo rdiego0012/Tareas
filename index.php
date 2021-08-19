@@ -1,9 +1,9 @@
 <?php
- include ("conexion.php");
- $con= conectar();
- $sql = "SELECT * FROM paciente";
- $query = mysqli_query($con,$sql);
- ?>
+  include ("conexion.php");
+  $con= conectar();
+  $sql = "SELECT * FROM paciente  WHERE estado_paciente = 1 ";
+  $query = mysqli_query($con,$sql);
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Clinica </title>
+    <title> Medicos </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
@@ -31,7 +31,10 @@
                 <input type="text" class="form-control mb-3" name="apellidos_paciente" placeholder="Apellidos">
                 <input type="text" class="form-control mb-3" name="edad_paciente" placeholder="Edad">
                 <input type="text" class="form-control mb-3" name="direccion_paciente" placeholder="Dirección">
-                <input type="text" class="form-control mb-3" name="telefono_paciente" placeholder="Teléfono">                           
+                <input type="text" class="form-control mb-3" name="telefono_paciente" placeholder="Teléfono"> 
+                <input type="text" class="form-control mb-3" name="ocupacion_paciente" placeholder="Ocupacion"> 
+                <input type="text" class="form-control mb-3" name="genero_paciente" placeholder="Genero">   
+                                        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>        
@@ -42,7 +45,6 @@
   </div>
 </div>
 <div>
-
 
 <div class="modal fade" id="modal_edit_paciente<?php echo $row['id_paciente']; ?>" tabindex="-1" rol="dialog" aria-hidden="true" aria-labelledby="">
   <div class="modal-dialog">
@@ -79,13 +81,25 @@
                 <div class="form-group">
                   <label for="recipient-name" class="col-form-label">Telefono:</label>
                   <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['telefono_paciente']; ?>" required="true">
-                </div>                
+                </div>         
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Ocupacion:</label>
+                  <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['ocupacion_paciente']; ?>" required="true">
+                </div> 
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Genero:</label>
+                  <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['genero_paciente']; ?>" required="true">
+                </div> 
+                <!--<div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Estado:</label>
+                  <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['estado_paciente']; ?>" required="true">
+                </div> -->        
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
               <button type="submit" class="btn btn-primary">Guardar Cambios</button>
             </div>
-       </form>
+        </form>
 
     </div>
   </div>
@@ -141,12 +155,15 @@
             <table class="table mt-5">
             <thead class="thead-dark">
                 <tr>
-                <th scope="col">Id</th>
+                 <th scope="col">Id</th>
                 <th scope="col">Nombres</th>
                 <th scope="col">Apellidos</th>
                 <th scope="col">Edad</th>
                 <th scope="col">Direccion</th>
                 <th scope="col">Telefono</th>
+                <th scope="col">Ocupacion</th>
+                <th scope="col">Genero</th>
+                <!--<th scope="col">Estado</th>-->
                 <th> </th>
                 <th></th>
                 </tr>
@@ -162,14 +179,16 @@
                     <td> <?php echo $row['edad_paciente'] ?> </td>
                     <td> <?php echo $row['direccion_paciente'] ?> </td>
                     <td> <?php echo $row['telefono_paciente'] ?> </td>
+                    <td> <?php echo $row['ocupacion_paciente'] ?> </td>
+                    <td> <?php echo $row['genero_paciente'] ?> </td>
+                    <!--<td> <?php echo $row['estado_paciente'] ?> </td>-->
                     <td> <a href="actualizarp.php?id_paciente=<?php echo $row['id_paciente'] ?>" class="btn btn-danger">Editar</a></td>                                     
                 </tr>                             
                 <?php
                 }
                 ?>                
             </tbody>                     
-            </table>
-           
+            </table>           
             <a href="reporte.php" class="btn btn-secondary">Generar Reporte</a>
                         <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center mt-5">
@@ -189,7 +208,7 @@
         </div>
     </div>
 
- <!-- Bootstrap Bundle with Popper -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

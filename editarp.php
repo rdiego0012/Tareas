@@ -26,6 +26,9 @@
                         <input type="text" class="form-control mb-4" name="edad_paciente" value="<?php echo $row['edad_paciente'] ?>">
                         <input type="text" class="form-control mb-4" name="direccion_paciente" value="<?php echo $row['direccion_paciente'] ?>">
                         <input type="text" class="form-control mb-4" name="telefono_paciente" value="<?php echo $row['telefono_paciente'] ?>">
+                        <input type="text" class="form-control mb-4" name="ocupacion_paciente" value="<?php echo $row['ocupacion_paciente'] ?>">
+                        <input type="text" class="form-control mb-4" name="genero_paciente" value="<?php echo $row['genero_paciente'] ?>">
+                        
                         <input type="submit" class="btn btn-primary btn-block" value="Actualizar">
                     </form>
             </div>
