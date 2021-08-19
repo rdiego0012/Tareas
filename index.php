@@ -100,12 +100,10 @@
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
               <button type="submit" class="btn btn-primary">Guardar Cambios</button>
             </div>
-        </form>
 
     </div>
   </div>
 </div>
-
 
 <div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
