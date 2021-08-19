@@ -44,11 +44,53 @@
 </nav>
 </div>
 
+
+
     <div class="container mt-5">
-      <h1 class="p-3 mb-2 bg-transparent text-secundary">Bienvenido</h1>
-        
+      <h1 class="p-3 mb-2 bg-transparent text-secundary">Bienvenido</h1>        
+      
+      <div class="container">
+  <div class="row">
+    <div class="col">
+    <div class="card container mt-5" style="width: 19rem;">
+  <img src="https://www.pngkit.com/png/full/428-4285926_paciente-y-mdico-en-pantalla-con-resultados-physician.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Pacientes</h5>
+    <p class="card-text">Aqui podra agregar, actualizar y eliminar un paciente del sistema </p>
+    <a href="pacientes.php" class="btn btn-primary">Ver pacientes</a>
+  </div>
+</div>
+
+    </div>
+    <div class="col">     
+<div class="card container mt-5" style="width: 25rem;">
+  <img src="https://images.vexels.com/media/users/3/151981/isolated/preview/f8863741dba8034b3e1d4809a01c782a-estetoscopio-icono-medico-iconos.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Médicos</h5>
+    <p class="card-text">Aqui podra agregar, actualizar y eliminar un mèdico del sistema</p>
+    <a href="medicos.php" class="btn btn-primary">Ver Médicos</a>
+  </div>
+  </div>
+
+
+    </div>
+    <div class="col">      
+<div class="card container mt-5" style="width: 22rem;">
+  <img src="https://www.atenciondellamadas.net/wp-content/uploads/2019/10/gestion-citas-medicas.svg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Citas</h5>
+    <p class="card-text">Aqui podra reservar o reagendar una cita</p>
+    <a href="consultas.php" class="btn btn-primary">Ver citas proximas</a>
     </div>
 </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
     
 <!-- Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
