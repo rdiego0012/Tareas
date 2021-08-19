@@ -87,6 +87,7 @@
                   <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['ocupacion_paciente']; ?>" required="true">
                 </div> 
                 <div class="form-group">
+
                   <label for="recipient-name" class="col-form-label">Genero:</label>
                   <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['genero_paciente']; ?>" required="true">
                 </div> 
