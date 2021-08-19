@@ -157,7 +157,7 @@
             <table class="table mt-5">
             <thead class="thead-dark">
                 <tr>
-                 <th scope="col">Id</th>
+                <th scope="col">Id</th>
                 <th scope="col">Nombres</th>
                 <th scope="col">Apellidos</th>
                 <th scope="col">Direccion</th>

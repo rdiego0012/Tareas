@@ -153,7 +153,7 @@
             <table class="table mt-5">
             <thead class="thead-dark">
                 <tr>
-                 <th scope="col">Id</th>
+                <th scope="col">Id</th>
                 <th scope="col">Nombres</th>
                 <th scope="col">Apellidos</th>
                 <th scope="col">Edad</th>
@@ -205,7 +205,6 @@
         </div>
         </div>
     </div>
-
 <!-- Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>

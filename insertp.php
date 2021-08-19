@@ -13,6 +13,6 @@
     if($query){
         echo "<script> alert('Dato ingresado con exito');
         location.href='..github/tareas/index.php';
-         </script>";   
+    </script>";   
     }    
 ?>
