@@ -16,6 +16,10 @@
 </head>
 <body>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="app.js"></script>
+
+
     <div>
     <div  id="miModal" class="modal fade" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
   <div class="modal-dialog">
@@ -124,7 +128,7 @@
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control me-2" type="search" id="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
